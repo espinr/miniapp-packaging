@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <title>MiniApp Packaging</title>
     <script async class="remove" src="https://www.w3.org/Tools/respec/respec-w3c"></script>
+    <script class="remove" src="./js/data-test-display.js"></script>
     <script class="remove">
         var respecConfig = {
             specStatus: "ED",
@@ -85,6 +86,8 @@
                     href: "https://w3c.github.io/miniapp-addressing/"
                 }
             },
+            postProcess:[data_test_display],
+            testSuiteURI: "https://espinr.github.io/miniapp-tests/index.html",
             a11y: true,            
         };
     </script>
@@ -188,7 +191,7 @@
             </section>
             <section id="sec-pages-directory">
                 <h3><code>pages</code> Directory</h3>
-                <p>The <code>pages</code> directory contains a set of files for the display and user interaction of the [=MiniApp pages=].</p>
+                <p data-tests="#pck-pages-same-filenames">The <code>pages</code> directory contains a set of files for the display and user interaction of the [=MiniApp pages=].</p>
                 <p>A [=MiniApp page=] is defined by a set of [=resources=], whose files are identified by a unique filename (e.g., <code>intro</code>) and a specific extension that defines the [=resource=] type, such as the business logic of the application (e.g., <code>intro.js</code>), the structure and content (e.g., <code>intro.html</code>), and the scoped stylesheet (e.g., <code>intro.css</code>).</p>
                 <p>Developers MAY include other types of [=resources=] according to their needs. Also, the files related to a page (identified with the same filename) MAY be organized either in specific subdirectories for each page or stored under the <code>pages</code> directory directly.</p>
                 <pre class="example" title="Page resources directly in the pages directory">
