@@ -88,7 +88,7 @@
             },
             postProcess:[data_test_display],
             testSuiteURI: "https://w3c.github.io/miniapp-tests/",            
-            a11y: true,            
+            a11y: false,            
         };
     </script>
 </head>
@@ -175,7 +175,7 @@
                         |___zh-Hans.json
                         |___en-US.json
             </pre>
-            <section>
+            <section id="sec-root-directory">
                 <h3>Root Directory</h3>
                 <p>The <dfn id="dfn-root-directory" data-lt="root directory|root directories|MiniApp root directories" data-dfn-type="dfn">MiniApp root directory</dfn> is the base directory of the [=MiniApp package=] file system.</p> 
 
@@ -183,8 +183,8 @@
                 <dl data-cite="MINIAPP-MANIFEST">
                     <dt><code>manifest.json</code></dt>
                     <dd>The <a href="https://www.w3.org/TR/miniapp-manifest/#dfn-miniapp-manifest-s" data-link-type="dfn">MiniApp manifest</a> is a JSON document responsible for the global configuration of the MiniApp. A manifest file contains a collection of mandatory and optional attributes that indicate the setup of the MiniApp, including routes and paths of the pages and the window configuration of the MiniApp (e.g., styles of the navigation bar, background image, background color, page title, among others), according to the MiniApp Manifest specification [[MINIAPP-MANIFEST]].</dd>
-                    <dt><code>app.css</code></dt>
-                    <dd>This file is the main stylesheet of the application, where developers define common styles and look and feel aspects of the [=pages=] within the MiniApp. It MAY be empty.</dd>
+                    <dt id="root-directoy-app-css"><code>app.css</code></dt>
+                    <dd data-tests="#pkg-root-app-css-empty">This file is the main stylesheet of the application, where developers define common styles and look and feel aspects of the [=pages=] within the MiniApp. It MAY be empty.</dd>
                     <dt><code>app.js</code></dt>
                     <dd>This script document has the basic service logic of the MiniApp and includes the essential configuration and control of the MiniApp lifecycle [[MINIAPP-LIFECYCLE]], including the management of events for launching, showing, and hiding the MiniApp.</dd>
                 </dl>
@@ -192,7 +192,7 @@
             <section id="sec-pages-directory">
                 <h3><code>pages</code> Directory</h3>
                 <p>The <code>pages</code> directory contains a set of files for the display and user interaction of the [=MiniApp pages=].</p>
-                <p>A [=MiniApp page=] is defined by a set of [=resources=], whose files are identified by a unique filename (e.g., <code>intro</code>) and a specific extension that defines the [=resource=] type, such as the business logic of the application (e.g., <code>intro.js</code>), the structure and content (e.g., <code>intro.html</code>), and the scoped stylesheet (e.g., <code>intro.css</code>).</p>
+                <p data-tests="#pkg-pages-same-filenames">A [=MiniApp page=] is defined by a set of [=resources=], whose files are identified by a unique filename (e.g., <code>intro</code>) and a specific extension that defines the [=resource=] type, such as the business logic of the application (e.g., <code>intro.js</code>), the structure and content (e.g., <code>intro.html</code>), and the scoped stylesheet (e.g., <code>intro.css</code>).</p>
                 <p>Developers MAY include other types of [=resources=] according to their needs. Also, the files related to a page (identified with the same filename) MAY be organized either in specific subdirectories for each page or stored under the <code>pages</code> directory directly.</p>
                 <pre class="example" title="Page resources directly in the pages directory">
                     /
