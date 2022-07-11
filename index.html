@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <title>MiniApp Packaging</title>
     <script async class="remove" src="https://www.w3.org/Tools/respec/respec-w3c"></script>
+    <script class="remove" src="./js/data-test-display.js"></script>    
     <script class="remove">
         var respecConfig = {
             specStatus: "ED",
@@ -85,6 +86,8 @@
                     href: "https://w3c.github.io/miniapp-addressing/"
                 }
             },
+            postProcess:[data_test_display],
+            testSuiteURI: "https://w3c.github.io/miniapp-tests/",            
             a11y: true,            
         };
     </script>
